@@ -1,1 +1,10 @@
-[{"model": "catalog.category", "pk": 1, "fields": {"name": "Electronics", "description": ""}}, {"model": "catalog.category", "pk": 2, "fields": {"name": "Clothes", "description": ""}}]
+[
+  {
+    "fields": {
+      "name": "Tableware",
+      "description": "test"
+    },
+    "model": "catalog.category",
+    "pk": 1
+  }, {"model": "catalog.category", "pk": 2,
+  "fields": {"name": "Furniture", "description": "high-end Italian furniture"}}]
