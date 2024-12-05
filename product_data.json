@@ -1,1 +1,20 @@
-[{"model": "catalog.product", "pk": 6, "fields": {"name": "laptop", "description": "high-quality", "image": "", "category": "Electronics", "price": "700000", "created_at": "2023-01-12", "updated_at": "2024-11-02"}}]
+[
+  {
+    "fields": {
+      "name": "chair",
+      "description": "a comfortable Greek chair",
+      "image": "",
+      "category": 1,
+      "price": "4000",
+      "created_at": "2024-12-05",
+      "updated_at": "2024-12-05"
+    },
+    "model": "catalog.product",
+    "pk": 2
+  }, {"model": "catalog.product", "pk": 2,
+  "fields":
+  {"name": "spoon",
+    "description": "steel",
+    "image": "",
+    "category": 2,
+    "price": "240", "created_at": "2024-12-05", "updated_at": "2024-12-05"}}]
