@@ -2,7 +2,7 @@
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, include
 from catalog.apps import CatalogConfig
 from catalog.views import home, contacts
 from django.contrib import admin
@@ -12,7 +12,8 @@ from django.contrib import admin
 app_name = CatalogConfig.name
 
 urlpatterns = [
-    path("", home, name="home"),  # This is the root URL for the home page
+    # path("", home, name="home"),  # This is the root URL for the home page
+    path("", include("catalog.urls", namespace="catalog")),
     path(
         "contacts/", contacts, name="contacts"
     ),
