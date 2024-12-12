@@ -12,7 +12,7 @@ def contacts(request):
 
 
 def index(request):
-    return render(request, "base.html")
+    return render(request, "catalog/base.html")
 
 class ProductDetailView(View):
     def get(self, request, product_id):
