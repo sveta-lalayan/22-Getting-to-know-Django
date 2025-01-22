@@ -3,6 +3,7 @@ from catalog.apps import CatalogConfig
 from catalog.views import contacts, HomePageView
 from catalog.views import ProductDetailView
 
+
 app_name = CatalogConfig.name
 
 urlpatterns = [

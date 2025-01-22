@@ -1,54 +1,17 @@
+{% extends "catalog/base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-        h1 {
-            color: #333;
-        }
-        .product {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .price {
-            font-weight: bold;
-            color: green;
-        }
-    </style>
-</head>
-<body>
-
-{% extends 'catalog/base.html' %}
-
-{% block title %}Product Details{% endblock %}
+{% block title %}Контакты{% endblock %}
 
 {% block content %}
-<h1>Product Information</h1>
 
-<div class="product">
-    <h2>{{ spoon.name }}</h2>
-    <p>{{ spoon.description }}</p>
-    <p class="price">Price: ${{ spoon.price }}</p>
-</div>
+<div class="container">
+    <h1>Product Information</h1>
 
-<div class="product">
-    <h2>{{ chair.name }}</h2>
-    <p>{{ chair.description }}</p>
-    <p class="price">Price: ${{ chair.price }}</p>
-</div>
-
+    <div class="product">
+        <div class="product-card mb-4">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p class="price">Price: ${{ product.price }}</p>
+        </div>
+    </div>
 {% endblock %}
-
-</body>
-</html>
-
