@@ -23,10 +23,11 @@
 from django.urls import path
 
 from . import views
+from .apps import BlogConfig
 # from . import views
 from .views import BlogListView, BlogDetailView
 
-app_name = 'blog'
+app_name = BlogConfig.name
 
 urlpatterns = [
     # Список статей
