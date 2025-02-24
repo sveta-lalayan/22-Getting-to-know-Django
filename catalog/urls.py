@@ -9,6 +9,8 @@ from catalog.views import (
     ProductDetailView,
 )
 
+from . import views
+
 app_name = CatalogConfig.name
 
 urlpatterns = [
@@ -23,6 +25,12 @@ urlpatterns = [
         ProductDetailView.as_view(),
         name="product_detail"
     ),
+    path('products/', views.product_list, name='product_list'),
+    path('products/create/', views.create_product, name='create_product'),
+    path('products/<pk>/update/', views.update_product, name='update_product'),
+    path('products/<pk>/delete/', views.delete_product, name='delete_product'),
 
 ]
+
+
 
