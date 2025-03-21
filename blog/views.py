@@ -1,56 +1,11 @@
-# from django.shortcuts import render, get_object_or_404, redirect
-# from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-# from .models import Article
-#
-#
-# class ArticleListView(ListView):
-#     model = Article
-#
-#
-# class ArticleDetailView(DetailView):
-#
-#
-#     def get(self, request, pk):
-#         post = get_object_or_404(Article, pk=pk)
-#         post.views_count += 1
-#         post.save()
-#         return super().get(request, pk)
-#
-#
-# model = Article
-#
-# template_name = 'article_detail.html'
-#
-#
-# class CreateArticle(CreateView):
-#     template_name = 'create_article.html'
-#
-#
-# model = Article
-# fields = ['title', 'content', 'preview_image', 'is_published']
-#
-#
-# class UpdateArticle(UpdateView):
-#     template_name = 'update_article.html'
-#
-#
-# model = Article
-# fields = ['title', 'content', 'preview_image', 'is_published']
-#
-#
-# class DeleteArticle(DeleteView):
-#     success_url = '/articles/'
-#
-#
-# template_name = 'delete_article.html'
-# model = Article
-# context_object_name = 'article'
+
 
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from .models import Blog
+
 
 class BlogCreateView(CreateView):
     model = Blog

@@ -10,9 +10,27 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
 
-class RegisterView(APIView):
-    def post(self, request):
-        form = RegisterForm(request.data)
+# class RegisterView(APIView):
+#     def post(self, request):
+#         form = RegisterForm(request.data)
+#         if form.is_valid():
+#             user = form.save(commit=False)
+#             user.set_password(form.cleaned_data['password'])
+#             user.save()
+#             login(request, user)
+#             send_mail(
+#                 'Приветствие',
+#                 'Добро пожаловать на наш сайт!',
+#                 'your_email@example.com',
+#                 [user.email],
+#                 fail_silently=False,
+#             )
+#             return Response({'message': 'Пользователь создан'}, status=status.HTTP_201_CREATED)
+#         return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
@@ -25,9 +43,10 @@ class RegisterView(APIView):
                 [user.email],
                 fail_silently=False,
             )
-            return Response({'message': 'Пользователь создан'}, status=status.HTTP_201_CREATED)
-        return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)
-
+            return redirect('home')
+    else:
+        form = RegisterForm()
+    return render(request, 'users/register.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':

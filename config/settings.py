@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "catalog",
     'blog',
     'users',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
