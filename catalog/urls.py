@@ -33,7 +33,7 @@ urlpatterns = [
     path('update/<pk>/', ProductUpdateView.as_view(), name='update_product'),
     path('delete/<pk>/', ProductDeleteView.as_view(), name='delete_product'),
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
+    # path('users/', include('users.urls')),
 
 ]
 

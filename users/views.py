@@ -43,3 +43,4 @@ def login_view(request):
         form = CustomAuthenticationForm()
     return render(request, 'users/login.html', {'form': form})
 
+

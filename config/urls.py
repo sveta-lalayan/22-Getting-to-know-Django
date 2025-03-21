@@ -6,6 +6,7 @@ from django.urls import path, include
 from catalog.apps import CatalogConfig
 from catalog.views import contacts
 
+
 app_name = CatalogConfig.name
 #
 urlpatterns = [
@@ -16,6 +17,7 @@ urlpatterns = [
     ),
 
     path("blog/", include('blog.urls', namespace='blog')),
+    path('users/', include('users.urls')),
 ]
 
 

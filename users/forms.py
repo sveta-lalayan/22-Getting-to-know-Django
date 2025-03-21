@@ -24,3 +24,5 @@ class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = User
         fields = ('email', 'password')
+
+
