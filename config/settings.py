@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True if os.getenv("DEBUG") == "True" else False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your-domain.com', 'localhost', '127.0.0.1']
 
 
 # Application definition

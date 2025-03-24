@@ -3,6 +3,8 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+
+from django.contrib import admin
 from catalog.apps import CatalogConfig
 from catalog.views import contacts
 
@@ -12,6 +14,7 @@ app_name = CatalogConfig.name
 urlpatterns = [
 
     path("", include("catalog.urls", namespace="catalog")),
+    path('admin/', admin.site.urls),
     path(
         "contacts/", contacts, name="contacts"
     ),

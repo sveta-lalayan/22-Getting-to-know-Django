@@ -1,9 +1,20 @@
+<!--<h1>Список продуктов</h1>-->
+<!--<ul>-->
+<!--    {% for product in products %}-->
+<!--        <li>{{ product.name }} ({{ product.price }})</li>-->
+<!--        <a href="{% url 'update_product' product.pk %}">Редактировать</a>-->
+<!--        <a href="{% url 'delete_product' product.pk %}">Удалить</a>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+<!--<a href="{% url 'create_product' %}">Создать новый продукт</a>-->
 <h1>Список продуктов</h1>
 <ul>
     {% for product in products %}
         <li>{{ product.name }} ({{ product.price }})</li>
-        <a href="{% url 'update_product' product.pk %}">Редактировать</a>
-        <a href="{% url 'delete_product' product.pk %}">Удалить</a>
+        {% if request.user == product.owner or request.user.is_staff %}
+            <a href="{% url 'update_product' product.pk %}">Редактировать</a>
+            <a href="{% url 'delete_product' product.pk %}">Удалить</a>
+        {% endif %}
     {% endfor %}
 </ul>
 <a href="{% url 'create_product' %}">Создать новый продукт</a>
