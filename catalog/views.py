@@ -19,8 +19,8 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
     template_name = 'create_product.html'
     success_url = reverse_lazy('product_list')
 
-
-
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
 
 class OwnerAccessMixin(UserPassesTestMixin):
     def test_func(self):
